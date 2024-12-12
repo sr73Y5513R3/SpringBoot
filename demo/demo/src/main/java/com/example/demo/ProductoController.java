@@ -1,9 +1,8 @@
 package com.example.demo;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,4 +49,19 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productoRespositorio.add(product));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getById(@PathVariable Long id){
+        return ResponseEntity.of(productoRespositorio.get(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> edit(@PathVariable Long id, @RequestBody Product product){
+        return ResponseEntity.of(productoRespositorio.edit(id, product));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Product> delete(@PathVariable Long id){
+        productoRespositorio.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
