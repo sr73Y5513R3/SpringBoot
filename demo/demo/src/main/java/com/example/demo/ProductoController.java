@@ -32,7 +32,7 @@ public class ProductoController {
       * 1. Obtener del repositorio la lista de productos
       * 2. Si la lista está vacia, devolver 404
       * 3. Si la lista tiene productos, devolver 200 con la lista
-      * */
+      */
 
         List<Product> result = productoRespositorio.getAll();
 
