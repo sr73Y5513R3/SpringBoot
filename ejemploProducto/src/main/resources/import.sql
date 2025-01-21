@@ -1,0 +1,1 @@
+insert into categoria (id, nombre) values (nextval('categoria_seq'), 'bebidas')

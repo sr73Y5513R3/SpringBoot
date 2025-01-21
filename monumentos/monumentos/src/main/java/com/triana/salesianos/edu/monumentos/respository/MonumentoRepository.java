@@ -30,7 +30,7 @@ public class MonumentoRepository {
         add(Monumento.builder().nombre("Plaza Juan Vázquez de Molina").descripcion("\n" +
                 "La Plaza Vázquez de Molina está considerada como la plaza de toda Europa que mayor concentración de edificios históricos tiene por metro cuadrado")
                 .imagen("https://www.vandelviraturismo.com/wp-content/uploads/2020/09/plaza-vazquez-de-molina2-900x480.jpg")
-                .codigoPais("ES").pais("España").ciudad("Úbeda").longitud().latitud().build());
+                .codigoPais("ES").pais("España").ciudad("Úbeda").longitud(4).latitud(3).build());
     }
 
     public Monumento add (Monumento monumento) {
