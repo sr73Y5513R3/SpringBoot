@@ -18,8 +18,8 @@ public class Uso {
     @GeneratedValue
     private Long idUso;
 
-    private LocalDateTime fechaInicio;
-    private LocalDateTime fechaFin;
+    private String fechaInicio;
+    private String fechaFin;
 
     private double coste;
 
@@ -32,4 +32,9 @@ public class Uso {
     @JoinColumn(name = "bicicleta_id",
     foreignKey = @ForeignKey(name = "fk_bicicleta_uso"))
     private Bicicleta bicicleta;
+
+    @ManyToOne
+    @JoinColumn(name = "estacion_id",
+    foreignKey = @ForeignKey(name = "fk_estacion_uso"))
+    private Estacion estacion;
 }

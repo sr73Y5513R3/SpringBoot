@@ -24,19 +24,7 @@ public class Bicicleta {
     private String modelo;
     private String estado;
 
-    @OneToMany(mappedBy = "bicicleta", fetch = FetchType.EAGER)
-    @Builder.Default
-    private List<Uso> usoBicicleta = new ArrayList<Uso>();
 
-    public void addUsoBicicleta (Uso uso) {
-        uso.setBicicleta(this);
-        usoBicicleta.add(uso);
-    }
-
-    public void removeUsoBicicleta (Uso uso) {
-        usoBicicleta.remove(uso);
-        uso.setBicicleta(null);
-    }
 
     //Cuando se inica un uso hasta que ese uso no termina
     //La bicicleta no está en ninguna estación entonces estacion = null
